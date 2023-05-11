@@ -7,21 +7,28 @@ module.exports = {
         .setDescription('Generates a sentence based on the last 100 messages on the specified channel')
         .addChannelOption(option =>
             option.setName('channel')
-                .setDescription('The channel to get messages from')),
+                .setDescription('The channel to get messages from')
+                .setRequired(true)),
     async execute(interaction) {
+        // Get the channel
+        const channel = interaction.options.getChannel('channel');
 
-        let markov = new markovGen({
-            input:["a set of words that is complete in itself, typically containing a subject and predicate, conveying a statement, question, exclamation, or command, and consisting of a main clause and sometimes one or more subordinate clauses.",
-            "a set of words that is complete in itself, typically containing a subject and predicate, conveying a statement, question, exclamation, or command, and consisting of a main clause and sometimes one or more subordinate clauses.",
-            "Explore the versatility of Microsoft's Windows 11 operating system. Find out how our latest Windows OS gives you more ways to work, play, and create.",
-            "Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds."],
-            minLength: 10
+        channel.messages.fetch({ limit: 100 }).then(messages => {
+            console.log(`Got ${messages.size} messages, from ${channel.name} ${channel} on ${channel.guild} (${channel.guild.id})`);
+            let messageMap = messages.map(item => item.content);
+            
+            //console.log(messageMap);
+
+            // Initialize Markov
+            let markov = new markovGen({
+                input: messageMap,
+                minLength: 10
+            })
+
+            // Generate the sentence
+            let sentence = markov.makeChain();
+
+            interaction.reply(sentence);
         })
-
-        let sentence = markov.makeChain();
-
-        // interaction.user is the object representing the User who ran the command
-        // interaction.member is the GuildMember object, which represents the user in the specific guild
-        await interaction.reply(sentence);
     },
 };
