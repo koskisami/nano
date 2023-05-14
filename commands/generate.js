@@ -16,23 +16,23 @@ module.exports = {
             channel.messages.fetch({ limit: 100 }).then(messages => {
                 console.log(`Got ${messages.size} messages, from ${channel.name} ${channel} on ${channel.guild} (${channel.guild.id})`);
                 let messageMap = messages.map(item => item.content);
-                
+
                 //console.log(messageMap);
-    
+
                 // Initialize Markov
                 let markov = new markovGen({
                     input: messageMap,
                     minLength: 10
                 })
-    
+
                 // Generate the sentence
                 let sentence = markov.makeChain();
-    
+
                 interaction.reply(sentence);
             })
         } catch (error) {
-            interaction.reply("💖 An error has occurred: " + error);
+            interaction.reply("`⛔ " + error + "`\n\nTry a text channel next time bro.");
         }
-        
+
     },
 };
