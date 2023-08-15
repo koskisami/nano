@@ -9,7 +9,7 @@ module.exports = {
 			status: "dnd",
 			activities: [{
 				type: ActivityType.Competing,
-				name: "water melon eatjnf"
+				name: "nuclear arms race"
 			}]
 		});
 	},
