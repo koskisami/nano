@@ -8,6 +8,7 @@ module.exports = {
 
 		let countryName;
 		let secondaryTitle;
+		let oneOrTwo = (Math.random() <= 0.5) ? 1 : 2;
 
 		let secondaryTitles = [
 			'Chef',
@@ -61,7 +62,12 @@ module.exports = {
 			'Hitman',
 			'Mongolia',
 			'Gaslighter',
-			'GirlBoss'
+			'GirlBoss',
+			'Playstation',
+			'Xbox',
+			'Gameboy',
+			'Gamecube',
+			'Nintendo'
 		]
 
 		secondaryTitle = secondaryTitles[Math.floor(Math.random()*secondaryTitles.length)]
@@ -74,7 +80,10 @@ module.exports = {
 			})
 			.catch(error => console.log("Error:", error));
 		
-		
-		await interaction.reply(`Your new Certifiably Cool:tm: Nickname is: ** ${countryName} ${secondaryTitle} **`);
+		if (oneOrTwo == 1) {
+			await interaction.reply(`Your new Certifiably Cool:tm: Nickname is: ** ${countryName} ${secondaryTitle} **`);
+		} else {
+			await interaction.reply(`Your new Certifiably Cool:tm: Nickname is: ** ${secondaryTitle} ${countryName} **`);
+		}
 	},
 };
