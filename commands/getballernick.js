@@ -32,7 +32,6 @@ module.exports = {
 			'Microwave',
 			'God',
 			'Gatekeeper',
-			'Chief',
 			'Warlord',
 			'Speedcore',
 			'Future Funk',
