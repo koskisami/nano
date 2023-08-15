@@ -61,7 +61,10 @@ module.exports = {
 			'Gameboy',
 			'Gamecube',
 			'Nintendo',
-			'Phonk'
+			'Phonk',
+			'Japanoise',
+			'Squid Games',
+			'Mr Beast'
 		]
 
 		secondaryTitle = secondaryTitles[Math.floor(Math.random()*secondaryTitles.length)]
