@@ -11,7 +11,6 @@ module.exports = {
 		let oneOrTwo = (Math.random() <= 0.5) ? 1 : 2;
 
 		let secondaryTitles = [
-			'Chef',
 			'Master',
 			'Overlord',
 			'Boss',
