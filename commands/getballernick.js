@@ -24,11 +24,8 @@ module.exports = {
 			'DJ',
 			'Shogun',
 			'Guru',
-			'CEO',
 			'Emperor',
 			'Empress',
-			'CTO',
-			'King',
 			'Queen',
 			'Techno',
 			'Hardcore',
@@ -38,9 +35,7 @@ module.exports = {
 			'Chief',
 			'Warlord',
 			'Speedcore',
-			'Shogunate',
 			'Future Funk',
-			'Country music',
 			'Janitor',
 			'K-Pop',
 			'J-Pop',
@@ -51,13 +46,13 @@ module.exports = {
 			'Chiptune',
 			'Famicom',
 			'Balls',
-			'Penis music',
+			'Penis Music',
 			'Cumbia',
 			'Hip Hop',
 			'Crack',
 			'Adderall',
 			'Weed',
-			'Money baller',
+			'Money Baller',
 			'Oligarch',
 			'Hitman',
 			'Mongolia',
@@ -67,7 +62,8 @@ module.exports = {
 			'Xbox',
 			'Gameboy',
 			'Gamecube',
-			'Nintendo'
+			'Nintendo',
+			'Phonk'
 		]
 
 		secondaryTitle = secondaryTitles[Math.floor(Math.random()*secondaryTitles.length)]
