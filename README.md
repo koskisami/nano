@@ -31,8 +31,8 @@ uses random country api from apipip https://apipip.com/api/random-country-api/
 sends a random image out of a collection of comics, based on an old twitter bot that was killed by elon musk in cold blood.
 
 ![enter image description here](https://i.imgur.com/tWqaMr7.jpeg)
+
+    TODO: REMOVE IMAGES FROM GITHUB
   
 image credits: https://twitter.com/jokanhiyou
 if you want me to take this command out, just reach out and i will do so.
-
-Images from this command have been removed so you will have to provide your own.
