@@ -26,7 +26,6 @@ generates a nickname based on a joke that my friend group has, boils down to `wo
 
 ![enter image description here](https://i.imgur.com/KXgRKvI.jpeg)
 
-uses random country api from apipip https://apipip.com/api/random-country-api/
 ### /mokou
 sends a random image out of a collection of comics, based on an old twitter bot that was killed by elon musk in cold blood.
 

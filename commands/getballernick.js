@@ -5,16 +5,105 @@ module.exports = {
 		.setName('getballernick')
 		.setDescription('Generate a Certified Baller Nickname'),
 	async execute(interaction) {
-
-		let countryName;
-		let secondaryTitle;
+		let place;
+		let thing;
+		let nickname;
 		let oneOrTwo = (Math.random() <= 0.5) ? 1 : 2;
 
-		let secondaryTitles = [
+		let places = [
+			'Omsk',
+			'Ulaanbaatar',
+			'Pudasjärvi',
+			'Krasnoyarsk',
+			'Moscow',
+			'Seoul',
+			'Texas',
+			'Oulu',
+			'Tuira',
+			'Raahe',
+			'Kaukovainio',
+			'Kuusamo',
+			'Paris',
+			'France',
+			'Norway',
+			'Sweden',
+			'Japan',
+			'Tokyo',
+			'Pyongyang',
+			'Toppila',
+			'Pudasjärvi',
+			'Ashgabat',
+			'Turkmenistan',
+			'Mongolia',
+			'Kazakhstan',
+			'Albania',
+			'New York',
+			'Alabama',
+			'Iraq',
+			'Sudan',
+			'Madagascar',
+			'Senegal',
+			'Pakistan',
+			'Russia',
+			'Mexico',
+			'USSR',
+			'Italia',
+			'Åland',
+			'Monaco',
+			'Yugoslavia',
+			'Czech Republic',
+			'Berlin',
+			'Germany',
+			'Izhevsk',
+			'Kazan',
+			'Novosibirsk',
+			'Rostov-on-Don',
+			'Irkutsk',
+			'Belgogrod',
+			'Lappeenranta',
+			'Finland',
+			'Kouvola',
+			'Kuopio',
+			'Poland',
+			'Warsaw',
+			'Egypt',
+			'China',
+			'Taiwan',
+			'Hong Kong',
+			'Chongqing',
+			'Guangzhou',
+			'Shanghai',
+			'Shenzhen',
+			'Tianjin',
+			'Taipei',
+			'India',
+			'Bangkok',
+			'Gangnam',
+			'Sapporo',
+			'Kyoto',
+			'Thailand',
+			'Pattaya',
+			'Australia',
+			'Canada',
+			'Tajikistan',
+			'Dubai',
+			'United States',
+			'United Arab Emirates',
+			'Türkiye',
+			'Ankara',
+			'Bulgaria'
+		]
+
+		let things = [
 			'Master',
 			'Overlord',
 			'Boss',
 			'Gabber',
+			'Windows 11',
+			'Linux',
+			'iPhone',
+			'Samsung Galaxy',
+			'LG',
 			'EDM',
 			'Dubstep',
 			'Gaming',
@@ -53,7 +142,6 @@ module.exports = {
 			'Money Baller',
 			'Oligarch',
 			'Hitman',
-			'Mongolia',
 			'Gaslighter',
 			'GirlBoss',
 			'Playstation',
@@ -64,23 +152,60 @@ module.exports = {
 			'Phonk',
 			'Japanoise',
 			'Squid Games',
-			'Mr Beast'
+			'Mr Beast',
+			'Penis',
+			'Harbinger',
+			'Gobbler',
+			'Mega Overlord',
+			'Hatsune Miku',
+			'Gengis Khan',
+			'Chairman',
+			'Chairman Mao',
+			'Mango',
+			'Adobe',
+			'Android',
+			'Arch Linux',
+			'Mussolini',
+			'Sonic',
+			'Michael Jackson',
+			'Green Hill Zone',
+			'Downloader',
+			'BitTorrent',
+			'iPod',
+			'iPad',
+			'Touhou',
+			'Undertale',
+			'GTA',
+			'Kim Jong',
+			'BOSCH Series 4 WGG04409GB 9 kg 1400 Spin Washing Machine',
+			'NVIDIA',
+			'AMD',
+			'Google',
+			'JavaScript',
+			'Python',
+			'Chromecast',
+			'4K Ultra HD',
+			'Fortnite',
+			'TModloader',
+			'Terraria',
+			'Ferrari',
+			'Tesla',
+			'Elon Musk',
+			'Obama'
 		]
 
-		secondaryTitle = secondaryTitles[Math.floor(Math.random()*secondaryTitles.length)]
+		// Get random place and thing from array
+		place = places[Math.floor(Math.random() * places.length)];
+		thing = things[Math.floor(Math.random() * things.length)];
 
-		// Get a random country name from this API
-		await fetch('https://api.apipip.com/v1/random-country/')
-			.then(response => response.json())
-			.then(data => {
-				countryName = data.name;
-			})
-			.catch(error => console.log("Error:", error));
-		
 		if (oneOrTwo == 1) {
-			await interaction.reply(`Your new Certifiably Cool:tm: Nickname is: ** ${countryName} ${secondaryTitle} **`);
+			nickname = place + " " + thing;
+			console.log("1: " + nickname);
 		} else {
-			await interaction.reply(`Your new Certifiably Cool:tm: Nickname is: ** ${secondaryTitle} ${countryName} **`);
+			nickname = thing + " " + place;
+			console.log("2: " + nickname);
 		}
+
+		await interaction.reply(`Your new Certifiably Cool:tm: Nickname is: ** ${nickname} **`);
 	},
 };
