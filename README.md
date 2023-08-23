@@ -26,6 +26,11 @@ generates a nickname based on a joke that my friend group has, boils down to `wo
 
 ![enter image description here](https://i.imgur.com/KXgRKvI.jpeg)
 
+### /getzonename
+uses the same arrays as `/getballernick` to generate a sonic level name using alliteration and an adjective api.
+
+using the random word api from: https://random-word-form.repl.co/
+
 ### /mokou
 sends a random image out of a collection of comics, based on an old twitter bot that was killed by elon musk in cold blood.
 

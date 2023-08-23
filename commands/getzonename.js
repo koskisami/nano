@@ -2,14 +2,21 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('getballernick')
-		.setDescription('Generate a Certified Baller Nickname'),
+		.setName('getzonename')
+		.setDescription('Generate a brand new Sonic the Hedgehog level name'),
 	async execute(interaction) {
-		let place;
-		let thing;
-		let nickname;
+		let apiURL = 'https://random-word-form.repl.co/random/adjective/';
+		let fullURL;
+
+		let zoneAdjective;
+		let zoneSubject;
+		let zoneName;
+
 		let oneOrTwo = (Math.random() <= 0.5) ? 1 : 2;
-		let username = interaction.member.displayName;
+
+		function capitalizeFirstLetter(string) {
+			return string.charAt(0).toUpperCase() + string.slice(1);
+		}
 
 		let places = [
 			'Omsk',
@@ -96,8 +103,6 @@ module.exports = {
 			'Lithuania',
 			'Estonia',
 			'McDonalds',
-			'Zone',
-			'Hill Zone',
 			'Zimbabwe',
 			'K-Market',
 			'Porvoo',
@@ -227,7 +232,6 @@ module.exports = {
 			'Percocets',
 			'808',
 			'Roland',
-			username,
 			'Mega Ultimate Emperor',
 			'Spotify',
 			'Breaking Bad',
@@ -247,18 +251,30 @@ module.exports = {
 			'Dua Lipa'
 		]
 
-		// Get random place and thing from array
-		place = places[Math.floor(Math.random() * places.length)];
-		thing = things[Math.floor(Math.random() * things.length)];
-
+		// Select which array to get Zone subject from
+		
 		if (oneOrTwo == 1) {
-			nickname = place + " " + thing;
-			console.log("1: " + nickname);
+			zoneSubject = places[Math.floor(Math.random() * places.length)];
+			console.log("1: " + zoneSubject);
 		} else {
-			nickname = thing + " " + place;
-			console.log("2: " + nickname);
+			zoneSubject = things[Math.floor(Math.random() * things.length)];
+			console.log("2: " + zoneSubject);
 		}
 
-		await interaction.reply(`"${username}", what a terrible nickname.\nYour new Actually Cool:tm: Nickname is: ** ${nickname} **`);
+		// Get first letter of subject and request adjective from API
+		fullURL = apiURL + zoneSubject.charAt(0);
+		console.log(fullURL);
+
+		let response = await fetch(fullURL);
+		zoneAdjective = await response.text();
+
+		// Do stupid idiot manipulation to zone adjective
+		zoneAdjective = zoneAdjective.replace(/[^\w\s!?]/g,'');
+		zoneAdjective = capitalizeFirstLetter(zoneAdjective);
+		console.log(zoneAdjective);
+
+		zoneName = zoneAdjective + " " + zoneSubject + " Zone";
+
+		await interaction.reply(`My favorite Sonic level is **${zoneName}**`);
 	},
 };
