@@ -91,7 +91,12 @@ module.exports = {
 			'United Arab Emirates',
 			'Türkiye',
 			'Ankara',
-			'Bulgaria'
+			'Bulgaria',
+			'Lithuania',
+			'Estonia',
+			'McDonalds',
+			'Zone',
+			'Hill Zone'
 		]
 
 		let things = [
@@ -191,7 +196,26 @@ module.exports = {
 			'Ferrari',
 			'Tesla',
 			'Elon Musk',
-			'Obama'
+			'Obama',
+			'SAMSUNG QE55QN90CATXXU 55" Smart 4K Ultra HD HDR Neo QLED TV with Bixby & Alexa',
+			'MSI Raider GE68 HX 16" Gaming Laptop - Intel® Core™ i7, RTX 4060, 1 TB SSD',
+			'SAMSUNG 8 Series SpaceMax RS68A884CB1/EU American-Style Smart Fridge Freezer',
+			'Reimu',
+			'Marisa',
+			'Sekibanki',
+			'Omori',
+			'Postman Pat',
+			'Andrew Tate',
+			'TikTok',
+			'Snapchat',
+			'Google Pixel',
+			'YouTube',
+			'Bilibili',
+			'WeChat',
+			'Overdose',
+			'Percocets',
+			'808',
+			'Roland'
 		]
 
 		// Get random place and thing from array
