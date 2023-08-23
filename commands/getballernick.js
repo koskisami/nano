@@ -9,6 +9,7 @@ module.exports = {
 		let thing;
 		let nickname;
 		let oneOrTwo = (Math.random() <= 0.5) ? 1 : 2;
+		let username = interaction.member.displayName;
 
 		let places = [
 			'Omsk',
@@ -215,7 +216,8 @@ module.exports = {
 			'Overdose',
 			'Percocets',
 			'808',
-			'Roland'
+			'Roland',
+			username
 		]
 
 		// Get random place and thing from array
@@ -229,7 +231,7 @@ module.exports = {
 			nickname = thing + " " + place;
 			console.log("2: " + nickname);
 		}
-
-		await interaction.reply(`Your new Certifiably Cool:tm: Nickname is: ** ${nickname} **`);
+		
+		await interaction.reply(`"${username}", what a terrible nickname.\nYour new Actually Cool:tm: Nickname is: ** ${nickname} **`);
 	},
 };
