@@ -276,10 +276,10 @@ module.exports = {
 	
 			zoneName = zoneAdjective + " " + zoneSubject + " Zone";
 	
-			await interaction.reply(`My favorite Sonic level is **${zoneName}**`);
+			interaction.reply(`My favorite Sonic level is **${zoneName}**`);
 		} catch(err) {
 			console.log(err);
-			await interaction.reply(err);
+			interaction.reply(err);
 		}
 
 	},
