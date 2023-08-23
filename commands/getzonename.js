@@ -265,16 +265,22 @@ module.exports = {
 		fullURL = apiURL + zoneSubject.charAt(0);
 		console.log(fullURL);
 
-		let response = await fetch(fullURL);
-		zoneAdjective = await response.text();
+		try {
+			let response = await fetch(fullURL);
+			zoneAdjective = await response.text();
+	
+			// Do stupid idiot manipulation to zone adjective
+			zoneAdjective = zoneAdjective.replace(/[^\w\s!?]/g,'');
+			zoneAdjective = capitalizeFirstLetter(zoneAdjective);
+			console.log(zoneAdjective);
+	
+			zoneName = zoneAdjective + " " + zoneSubject + " Zone";
+	
+			await interaction.reply(`My favorite Sonic level is **${zoneName}**`);
+		} catch(err) {
+			console.log(err);
+			await interaction.reply(err);
+		}
 
-		// Do stupid idiot manipulation to zone adjective
-		zoneAdjective = zoneAdjective.replace(/[^\w\s!?]/g,'');
-		zoneAdjective = capitalizeFirstLetter(zoneAdjective);
-		console.log(zoneAdjective);
-
-		zoneName = zoneAdjective + " " + zoneSubject + " Zone";
-
-		await interaction.reply(`My favorite Sonic level is **${zoneName}**`);
 	},
 };
