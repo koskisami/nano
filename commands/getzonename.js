@@ -5,6 +5,7 @@ module.exports = {
 		.setName('getzonename')
 		.setDescription('Generate a brand new Sonic the Hedgehog level name'),
 	async execute(interaction) {
+		await interaction.reply('**🤣 Fun fact** The code for this command is so terrible, that it takes more than 3 seconds to process it occasionally.');
 		let apiURL = 'https://random-word-form.repl.co/random/adjective/';
 		let fullURL;
 
@@ -276,10 +277,10 @@ module.exports = {
 	
 			zoneName = zoneAdjective + " " + zoneSubject + " Zone";
 	
-			interaction.reply(`My favorite Sonic level is **${zoneName}**`);
+			await interaction.editReply(`My favorite Sonic level is **${zoneName}**`);
 		} catch(err) {
 			console.log(err);
-			interaction.reply(err);
+			await interaction.editReply(err);
 		}
 
 	},
