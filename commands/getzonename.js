@@ -5,7 +5,7 @@ module.exports = {
 		.setName('getzonename')
 		.setDescription('Generate a brand new Sonic the Hedgehog level name'),
 	async execute(interaction) {
-		await interaction.reply('**ℹ️ Fun fact: ** You are seeing this because the command occasionally takes more than 3 seconds to execute, and discord api does not like that.');
+		await interaction.reply('**ℹ️ Fun fact: ** You are seeing this because the command occasionally takes more than 3 seconds to execute, and Discord API does not like that.');
 		let apiURL;
 		let fullURL;
 
@@ -244,19 +244,16 @@ module.exports = {
 		// Select if the 1st word will be adjective or noun
 		if (oneOrTwo == 1) {
 			apiURL = 'https://random-word-form.repl.co/random/noun/';
-			console.log("noun");
 		} else {
 			apiURL = 'https://random-word-form.repl.co/random/adjective/';
-			console.log("adjective");
 		}
 
 		// Set the zone subject
 		zoneSubject = things[Math.floor(Math.random() * things.length)];
-		console.log(zoneSubject);
 
 		// Get first letter of subject and request adjective from API
 		fullURL = apiURL + zoneSubject.charAt(0);
-		console.log(fullURL);
+		//console.log("Zone subject: "+ zoneSubject + ", URL: " + fullURL);
 
 		try {
 			let response = await fetch(fullURL);
@@ -265,10 +262,10 @@ module.exports = {
 			// Do stupid idiot manipulation to zone adjective
 			zoneFirstWord = zoneFirstWord.replace(/[^\w\s!?]/g,'');
 			zoneFirstWord = zoneFirstWord.charAt(0).toUpperCase() + zoneFirstWord.slice(1);
-			console.log(zoneFirstWord);
 	
 			zoneName = zoneFirstWord + " " + zoneSubject + " Zone";
-	
+			console.log(oneOrTwo + ": "+ zoneName);
+			
 			await interaction.editReply(`My favorite Sonic level is **${zoneName}**`);
 		} catch(err) {
 			console.log(err);
