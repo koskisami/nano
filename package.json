@@ -9,7 +9,6 @@
   "author": "koskisami",
   "license": "ISC",
   "dependencies": {
-    "@distube/ytdl-core": "^4.13.0",
     "discord.js": "^14.11.0",
     "markov-generator": "^1.2.3"
   }
