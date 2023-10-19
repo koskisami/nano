@@ -32,7 +32,7 @@ uses pretty much the same array as `/getballernick` to generate a sonic level na
 using the random word api from: https://random-word-form.repl.co/
 
 ### /mokou
-sends a random image out of a collection of comics, based on an old twitter bot that was killed by elon musk in cold blood.
+sends a random image out of a collection of comics, based on an old twitter bot that was lost in the aftermath of the twitter API pricing changes.
 
 ![enter image description here](https://i.imgur.com/tWqaMr7.jpeg)
 
