@@ -1,7 +1,7 @@
 ﻿# nano
 nano is my hobby project discord bot written in javascript, using node.js and discord.js.
 
-made with 🦞 in 🇫🇮
+made with ❤️ in 🇫🇮
 ## how to get it running?
 ⚠️ since this is my own hobby project I will not be providing any kind of support.
 
@@ -18,23 +18,23 @@ unlike many other discord bots, this one atleast up to this point has been just 
 ### /gen
 takes 100 of the latest messages from a channel that you have specified, and uses a markov chain to generate a new sentence out of those messages
 
-![enter image description here](https://i.imgur.com/fx1rMnH.png)
+![Screenshot of the bot performing the "gen" command](https://i.imgur.com/fx1rMnH.png)
 
 uses markov-generator https://www.npmjs.com/package/markov-generator
 ### /getballernick
 generates a nickname based on a joke that my friend group has, boils down to `word + country name`
 
-![enter image description here](https://i.imgur.com/KXgRKvI.jpeg)
+![Screenshot of the bot performing the "getballernick" command](https://i.imgur.com/KXgRKvI.jpeg)
 
 ### /getzonename
-uses pretty much the same array as `/getballernick` to generate a sonic level name using alliteration and an adjective/noun api.
+uses pretty much the same array as `/getballernick` to generate a Sonic level name using alliteration and an adjective/noun api.
 
 using the random word api from: https://random-word-form.repl.co/
 
 ### /mokou
 sends a random image out of a collection of comics, based on an old twitter bot that was lost in the aftermath of the twitter API pricing changes.
 
-![enter image description here](https://i.imgur.com/tWqaMr7.jpeg)
+![Screenshot of the bot performing the "mokou" command](https://i.imgur.com/tWqaMr7.jpeg)
 
 ⚠️ the repository doesnt contain the images for this command, so you will need to provide your own in the `assets/mokou` folder
 
