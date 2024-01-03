@@ -5,13 +5,12 @@ module.exports = {
 		.setName('getballernick')
 		.setDescription('Generate a Certified Baller Nickname'),
 	async execute(interaction) {
-		let place;
-		let thing;
+		let thing1;
+		let thing2;
 		let nickname;
-		let oneOrTwo = (Math.random() <= 0.5) ? 1 : 2;
 		let username = interaction.member.displayName;
 
-		let places = [
+		let things = [
 			'Omsk',
 			'Ulaanbaatar',
 			'Pudasjärvi',
@@ -107,10 +106,7 @@ module.exports = {
 			'US',
 			'UK',
 			'Brisbane',
-			'Austria'
-		]
-
-		let things = [
+			'Austria',
 			'Master',
 			'Overlord',
 			'Boss',
@@ -244,20 +240,64 @@ module.exports = {
 			'Piano',
 			'Skrillex',
 			'Knife Party',
-			'Dua Lipa'
+			'Dua Lipa',
+			'Robert',
+			'Explosive',
+			'Gorilla',
+			'Explosion',
+			'AK-47',
+			'Fat',
+			'Miku',
+			'Konami',
+			'Bemani',
+			'Idiot',
+			'Watermelon',
+			'Gamer',
+			'Killer',
+			'Prison',
+			'Human Sequencer',
+			'Exhaust Fumes',
+			'KSI',
+			'Money Boss',
+			'Boss',
+			'Markiplier',
+			'Namibia',
+			'Africa',
+			'Electrical Tape',
+			'Anime',
+			'Burger',
+			'Pizza',
+			'Tutankhamon',
+			'BMS',
+			'Potato',
+			'Fedex',
+			'UPS',
+			'DHL',
+			'Nissan',
+			'Toyota',
+			'Mazda',
+			'Dorito',
+			'Capybara',
+			'DaBaby',
+			'Funeral',
+			'Arcade',
+			'Honda',
+			'Honda Accord',
+			'Honda Civic',
+			'Fat Miku',
+			'Gupitaro',
+			'Luohua',
+			'Paavola',
+			'Turbocharger',
+			'Crazy',
+			'Crazy House'
 		]
 
 		// Get random place and thing from array
-		place = places[Math.floor(Math.random() * places.length)];
-		thing = things[Math.floor(Math.random() * things.length)];
+		thing1 = things[Math.floor(Math.random() * things.length)];
+		thing2 = things[Math.floor(Math.random() * things.length)];
 
-		if (oneOrTwo == 1) {
-			nickname = place + " " + thing;
-			console.log("1: " + nickname);
-		} else {
-			nickname = thing + " " + place;
-			console.log("2: " + nickname);
-		}
+		nickname = thing1 + " " + thing2;
 
 		await interaction.reply(`"${username}", what a terrible nickname.\nYour new Actually Cool:tm: Nickname is: ** ${nickname} **`);
 	},

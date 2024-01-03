@@ -9,7 +9,7 @@ module.exports = {
 			status: "dnd",
 			activities: [{
 				type: ActivityType.Competing,
-				name: "global economic crisis"
+				name: ":3"
 			}]
 		});
 	},
