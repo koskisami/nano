@@ -14,15 +14,14 @@ module.exports = {
         const channel = interaction.options.getChannel('channel');
         try {
             channel.messages.fetch({ limit: 100 }).then(messages => {
-                console.log(`Got ${messages.size} messages, from ${channel.name} ${channel} on ${channel.guild} (${channel.guild.id})`);
                 let messageMap = messages.map(item => item.content);
-
-                //console.log(messageMap);
+                let minimumLength = Math.floor(Math.random() * 50)+1;
+                console.log(`Got ${messages.size} messages, from ${channel.name} ${channel} on ${channel.guild} (${channel.guild.id}), markov min length ${minimumLength}`);
 
                 // Initialize Markov
                 let markov = new markovGen({
                     input: messageMap,
-                    minLength: 10
+                    minLength: minimumLength
                 })
 
                 // Generate the sentence
