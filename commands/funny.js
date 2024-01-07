@@ -20,7 +20,7 @@ module.exports = {
         let file = files[index];
         //Get full path for file, and send it to discord
         let fullPath = path
-          .join(process.cwd(), "assets", "mokou", file)
+          .join(process.cwd(), "assets", "garbage", file)
           .toString();
         console.log(fullPath);
         interaction.reply({ files: [fullPath] });
