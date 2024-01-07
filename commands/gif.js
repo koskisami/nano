@@ -22,18 +22,19 @@ module.exports = {
     let searchQuery = interaction.options.getString("search");
     console.log(searchQuery);
 
-    // If there is not a query, get a random gif from tenor
-    // TODO MAKE IT GET RANDOM WORDS FROM A LIST
+    // If there is not a query get a random trending gif from the current top 10
     try {
       if (searchQuery == null || searchQuery == "") {
-        Tenor.Search.Random("random", "1")
+        let trendingGIFS = [];
+        // Get 10 trending gifs, push the links to an array
+        Tenor.Trending.GIFs("10")
           .then((Results) => {
             Results.forEach((Post) => {
-              interaction.reply(Post.url);
-              console.log(
-                `${Post.id} (Created: ${Post.created}) @ ${Post.url}`
-              );
+              trendingGIFS.push(Post.url);
             });
+            // Reply with a random gif from array
+            let gifToSend = Math.floor(Math.random() * 10);
+            interaction.reply(trendingGIFS[gifToSend]);
           })
           .catch((error) => {
             console.log(error);
