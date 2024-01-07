@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.11.0",
-    "markov-generator": "^1.2.3"
+    "markov-generator": "^1.2.3",
+    "tenorjs": "^1.0.10"
   }
 }
